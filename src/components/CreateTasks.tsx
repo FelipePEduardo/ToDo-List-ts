@@ -7,8 +7,15 @@ import { ChangeEvent, FormEvent, InvalidEvent, useState } from 'react'
 import styles from './CreateTasks.module.css'
 import clipboard from '../assets/Clipboard.png'
 
+interface TaskProps {
+  id: string
+  content: string
+  isComplete: boolean
+}
+
 export function CreateTasks() {
-  const [ tasks, setTasks ] = useState<any[]>([])
+  const [ tasks, setTasks ] = useState<TaskProps[]>([])
+  console.log(tasks)
 
   const [ newTaskText, setNewTaskText ] = useState('')
   
